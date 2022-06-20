@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:mobile_challenge/home/data/models/user_model.dart';
-import 'package:mobile_challenge/home/data/service/github_service.dart';
+import 'package:mobile_challenge/home/domain/service/github_service.dart';
 import 'package:mobile_challenge/home/domain/entity/user.dart';
 
 class GithubServiceImpl implements GithubService {
@@ -18,10 +20,14 @@ class GithubServiceImpl implements GithubService {
           },
           options: Options(headers: {'User-Agent': 'request'}));
 
-      return List<UserModel>.from(
-          response.data["items"].map((x) => UserModel.fromJson(x))).toList();
+      final data = json.decode(response.data)["items"] as List;
+      return data.map((e) => UserModel.fromJson(e)).toList();
+    } on DioError catch (_) {
+      throw DioError(
+        requestOptions: RequestOptions(path: '$_baseUrl/search/users'),
+      );
     } catch (e) {
-      throw e;
+      throw Exception("Error occured getting all the users.");
     }
   }
 
@@ -30,8 +36,10 @@ class GithubServiceImpl implements GithubService {
     try {
       final response = await _dio.get('$_baseUrl/user/$id');
       return UserModel.fromJson(response.data);
+    } on DioError catch (e) {
+      throw Exception(e);
     } catch (e) {
-      throw e;
+      throw Exception("Error occured getting user by id.");
     }
   }
 }

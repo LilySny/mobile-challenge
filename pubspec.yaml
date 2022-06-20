@@ -41,6 +41,7 @@ dev_dependencies:
   build_runner: ^2.1.2
   mobx_codegen: ^2.0.2
   mockito: any
+  http_mock_adapter: ^0.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

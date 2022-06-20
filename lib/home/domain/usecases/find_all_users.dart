@@ -1,4 +1,4 @@
-import 'package:mobile_challenge/home/data/service/github_service.dart';
+import 'package:mobile_challenge/home/domain/service/github_service.dart';
 import 'package:mobile_challenge/home/domain/entity/user.dart';
 
 class FindAllUsers {

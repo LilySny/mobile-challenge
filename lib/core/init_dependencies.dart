@@ -9,7 +9,7 @@ import 'package:mobile_challenge/favorites/domain/usecases/find_all_favorites.da
 import 'package:mobile_challenge/favorites/domain/usecases/save_favorite.dart';
 import 'package:mobile_challenge/favorites/view/controllers/favorites_controller.dart';
 import 'package:mobile_challenge/home/data/service/github_service_impl.dart';
-import 'package:mobile_challenge/home/data/service/github_service.dart';
+import 'package:mobile_challenge/home/domain/service/github_service.dart';
 import 'package:mobile_challenge/home/domain/usecases/find_all_users.dart';
 import 'package:mobile_challenge/home/domain/usecases/find_user_by_id.dart';
 import 'package:mobile_challenge/home/view/controllers/github_store.dart';

@@ -7,10 +7,6 @@ class DeleteFavorite {
   DeleteFavorite(this._favoritesRepository);
 
   Future<void> execute(User user) async {
-    try {
-      return await _favoritesRepository.delete(user);
-    } catch (e) {
-      throw e;
-    }
+    return await _favoritesRepository.delete(user);
   }
 }

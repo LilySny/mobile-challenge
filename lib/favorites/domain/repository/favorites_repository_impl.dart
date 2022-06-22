@@ -11,7 +11,7 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
   Future<List<User>> findAll() async {
     try {
       return await _favoritesDatasource.findAll();
-    }  catch (e) {
+    } catch (e) {
       throw Exception("Error occured finding all favorites in local db.");
     }
   }

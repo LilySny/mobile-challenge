@@ -5,8 +5,8 @@ import 'package:mobile_challenge/home/data/models/user_model.dart';
 import 'package:mobile_challenge/home/domain/usecases/find_user_by_id.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../../shared/shared_mocks.dart';
 import '../../mocks/mock_github_service.dart';
-import '../../mocks/github_json_mock.dart';
 
 
 void main() {

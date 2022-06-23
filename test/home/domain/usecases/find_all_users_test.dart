@@ -5,7 +5,7 @@ import 'package:mobile_challenge/home/data/models/user_model.dart';
 import 'package:mobile_challenge/home/domain/usecases/find_all_users.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../mocks/github_json_mock.dart';
+import '../../../shared/shared_mocks.dart';
 import '../../mocks/mock_github_service.dart';
 
 void main() {
@@ -18,7 +18,7 @@ void main() {
   });
 
   test(
-    'should get users in the repository',
+    'should get users in the github service',
     () async {
       final data = jsonDecode(mockUserList)["data"] as List;
       final response = data.map((e) => UserModel.fromJson(e)).toList();

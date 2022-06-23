@@ -7,7 +7,7 @@ import 'package:mobile_challenge/home/data/models/user_model.dart';
 import 'package:mobile_challenge/home/data/service/github_service_impl.dart';
 import 'package:mobile_challenge/home/domain/entity/user.dart';
 import 'package:mobile_challenge/home/domain/service/github_service.dart';
-import '../mocks/github_json_mock.dart';
+import '../../shared/shared_mocks.dart';
 
 void main() {
   Dio dio;
